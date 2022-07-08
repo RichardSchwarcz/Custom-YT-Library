@@ -1,0 +1,12 @@
+.Container {
+    background-color: rgb(241, 241, 241);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.Header {
+    text-align: center;
+    padding-top: 10px;
+}

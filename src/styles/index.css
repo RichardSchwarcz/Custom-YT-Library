@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    font-family: 'Quicksand';
+    color: #333;
+    box-sizing: border-box
+}
+
+.HomeContainer {
+  height: 100vh;
+  margin-left: 5px;
+}
+
+
+.VerticalSplitter {
+  height: 100vh
+}
+
+.HorizontalSplitter {
+  display: flex;
+}
+
+.gutter {
+  background-color: #eee;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  margin: auto;
+}

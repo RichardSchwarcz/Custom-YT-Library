@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Split from "react-split";
+import Topics from "./components/Topics/Topics";
+import Folders from "./components/Folders/Folders";
+import Vids from "./components/Vids/Vids";
+import "./styles/index.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Split
+        className="HorizontalSplitter"
+        direction="horizontal"
+        sizes={[20, 80]}
+        minSize={200}
+        gutterSize={5}
+      >
+        <Topics />
+        <div className="HomeContainer">
+          <Split
+            className="VerticalSplitter"
+            direction="vertical"
+            sizes={[50, 50]}
+            minSize={100}
+            gutterSize={5}
+          >
+            <Folders />
+            <Vids />
+          </Split>
+        </div>
+      </Split>
     </div>
   );
 }
