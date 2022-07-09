@@ -1,7 +1,7 @@
 import Split from "react-split";
-import Topics from "./components/Topics/Topics";
-import Folders from "./components/Folders/Folders";
-import Vids from "./components/Vids/Vids";
+import TopicsPanel from "./Interface/TopicsPanel/TopicsPanel";
+import FoldersPanel from "./Interface/FoldersPanel/FoldersPanel";
+import VidsPanel from "./Interface/VidsPanel/VidsPanel";
 import "./styles/index.css";
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
         className="HorizontalSplitter"
         direction="horizontal"
         sizes={[20, 80]}
-        minSize={200}
+        minSize={250}
         gutterSize={5}
       >
-        <Topics />
+        <TopicsPanel />
         <div className="HomeContainer">
           <Split
             className="VerticalSplitter"
@@ -23,8 +23,8 @@ function App() {
             minSize={100}
             gutterSize={5}
           >
-            <Folders />
-            <Vids />
+            <FoldersPanel />
+            <VidsPanel />
           </Split>
         </div>
       </Split>
