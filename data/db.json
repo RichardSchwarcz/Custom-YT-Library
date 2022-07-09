@@ -1,14 +1,19 @@
 {
-    "Topics": [
-        {
-            "Tag": "Code",
-            "Name": "React",
-            "id": 1
-        },
-        {
-            "Tag": "Code",
-            "Name": "CS Shit",
-            "id": 2
-        }
-    ]
+  "Topics": [
+    {
+      "Name": "React",
+      "Tag": "Code",
+      "id": 1
+    },
+    {
+      "Name": "CS Shit",
+      "Tag": "Code",
+      "id": 2
+    },
+    {
+      "Name": "JS Functions",
+      "Tag": "Code",
+      "id": 3
+    }
+  ]
 }

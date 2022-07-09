@@ -1,29 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateTopic from "../../components/TopicsPanel/CreateTopic";
 import TopicsList from "../../components/TopicsPanel/TopicsList";
 import CSS from "./TopicsPanel.module.css";
 
 function TopicsPanel() {
-  const topicElements = [
-    {
-      Tag: "Code",
-      Name: "React",
-      id: 1,
-    },
-    {
-      Tag: "Code",
-      Name: "CS Shit",
-      id: 2,
-    },
-    {
-      Tag: "Climb",
-      Name: "Training",
-      id: 3,
-    },
-  ];
-
-  const [topics, setTopics] = useState(topicElements);
+  const [topics, setTopics] = useState(null);
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/Topics")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setTopics(data);
+      });
+  }, []);
 
   return (
     <div className={CSS.Container}>
@@ -33,7 +25,7 @@ function TopicsPanel() {
       <div className={CSS.ContentContainer}>
         <div className={CSS.Tag}></div>
         <div className={CSS.Topic}>
-          <TopicsList topics={topics} />
+          {topics && <TopicsList topics={topics} />}
           <div>
             {CreateNewTopicModal && (
               <CreateTopic closeModal={setCreateNewTopicModal} />

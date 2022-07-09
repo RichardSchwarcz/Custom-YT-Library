@@ -1,7 +1,23 @@
+import { useState } from "react";
 import CSS from "./CreateTopic.module.css";
 
 function CreateTopic(props) {
+  const [Name, setName] = useState("");
+  const [Tag, setTag] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const topic = { Name, Tag };
+
+    fetch("http://localhost:8000/Topics", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(topic),
+    });
+  };
+
   const closeModal = props.closeModal;
+
   return (
     <div className={CSS.ModalContainer}>
       <div className={CSS.Title}>
@@ -12,22 +28,26 @@ function CreateTopic(props) {
           <input
             className={CSS.input}
             type="text"
-            id="TopicName"
             placeholder="Name"
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             className={CSS.input}
             type="text"
-            id="TopicTag"
             placeholder="Tag"
+            value={Tag}
+            onChange={(e) => setTag(e.target.value)}
           />
         </form>
       </div>
       <div className={CSS.Buttons}>
-        <div className={CSS.CancelButton} onClick={() => closeModal(false)}>
+        <button className={CSS.CancelButton} onClick={() => closeModal(false)}>
           Cancel
-        </div>
-        <div className={CSS.SubmitButton}>Submit</div>
+        </button>
+        <button className={CSS.SubmitButton} onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </div>
   );
