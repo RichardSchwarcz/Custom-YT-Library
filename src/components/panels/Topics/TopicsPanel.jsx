@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CreateTopic from "../../components/TopicsPanel/CreateTopic";
-import TopicsList from "../../components/TopicsPanel/TopicsList";
+import { useState } from "react";
+import CreateTopic from "../../topics/CreateTopic/CreateTopic";
+import TopicsList from "../../topics/TopicsList";
 import CSS from "./TopicsPanel.module.css";
 
-function TopicsPanel() {
-  const [topics, setTopics] = useState(null);
+function TopicsPanel({ topics }) {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/Topics")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setTopics(data);
-      });
-  }, []);
 
   return (
     <div className={CSS.Container}>
@@ -24,7 +12,7 @@ function TopicsPanel() {
         <h2 className={CSS.Header}>Topics</h2>
       </div>
       <div className={CSS.ContentContainer}>
-        <div className={CSS.Tag}></div>
+        <div classsName={CSS.Tag}></div>
         <div>
           <div className={CSS.Topic}>
             {topics && <TopicsList topics={topics} />}

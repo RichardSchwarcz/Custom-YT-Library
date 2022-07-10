@@ -1,6 +1,6 @@
 import CSS from "./FoldersPanel.module.css";
 
-function FoldersPanel() {
+function Folders() {
   return (
     <div className={CSS.Container}>
       <h2 className={CSS.Header}>Folders</h2>
@@ -8,4 +8,4 @@ function FoldersPanel() {
   );
 }
 
-export default FoldersPanel;
+export default Folders;
