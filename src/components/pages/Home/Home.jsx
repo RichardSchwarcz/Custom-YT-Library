@@ -1,8 +1,8 @@
 import React from "react";
 import Split from "react-split";
-import TopicsPanel from "../../../Interface/TopicsPanel/TopicsPanel";
-import FoldersPanel from "../../../Interface/FoldersPanel/FoldersPanel";
-import VidsPanel from "../../../Interface/VidsPanel/VidsPanel";
+import TopicsPanel from "../../panels/Topics";
+import Folders from "../../panels/Folders/Folders";
+import VidsPanel from "../../panels/Vids/VidsPanel";
 
 function Home() {
   return (
@@ -23,7 +23,7 @@ function Home() {
             minSize={100}
             gutterSize={5}
           >
-            <FoldersPanel />
+            <Folders />
             <VidsPanel />
           </Split>
         </div>
