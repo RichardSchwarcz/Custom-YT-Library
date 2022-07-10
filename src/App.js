@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Split from "react-split";
 import TopicsPanel from "./Interface/TopicsPanel/TopicsPanel";
 import FoldersPanel from "./Interface/FoldersPanel/FoldersPanel";

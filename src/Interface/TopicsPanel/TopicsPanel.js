@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CreateTopic from "../../components/TopicsPanel/CreateTopic";
 import TopicsList from "../../components/TopicsPanel/TopicsList";
 import CSS from "./TopicsPanel.module.css";
@@ -24,8 +25,10 @@ function TopicsPanel() {
       </div>
       <div className={CSS.ContentContainer}>
         <div className={CSS.Tag}></div>
-        <div className={CSS.Topic}>
-          {topics && <TopicsList topics={topics} />}
+        <div>
+          <div className={CSS.Topic}>
+            {topics && <TopicsList topics={topics} />}
+          </div>
           <div>
             {CreateNewTopicModal && (
               <CreateTopic closeModal={setCreateNewTopicModal} />
