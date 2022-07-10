@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CreateTopic from "../../components/TopicsPanel/CreateTopic";
 import TopicsList from "../../components/TopicsPanel/TopicsList";
 import CSS from "./TopicsPanel.module.css";

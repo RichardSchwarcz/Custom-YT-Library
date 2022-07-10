@@ -1,35 +1,17 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Split from "react-split";
-import TopicsPanel from "./Interface/TopicsPanel/TopicsPanel";
-import FoldersPanel from "./Interface/FoldersPanel/FoldersPanel";
-import VidsPanel from "./Interface/VidsPanel/VidsPanel";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// compoennts
+import Home from "./components/pages/Home/Home";
+
 import "./styles/index.css";
 
 function App() {
   return (
-    <div>
-      <Split
-        className="HorizontalSplitter"
-        direction="horizontal"
-        sizes={[20, 80]}
-        minSize={250}
-        gutterSize={5}
-      >
-        <TopicsPanel />
-        <div className="HomeContainer">
-          <Split
-            className="VerticalSplitter"
-            direction="vertical"
-            sizes={[50, 50]}
-            minSize={100}
-            gutterSize={5}
-          >
-            <FoldersPanel />
-            <VidsPanel />
-          </Split>
-        </div>
-      </Split>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:topicName" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
