@@ -8,14 +8,10 @@
     box-sizing: border-box
 }
 
-.HomeContainer {
-  height: 100vh;
-  margin-left: 5px;
-}
-
 
 .VerticalSplitter {
-  height: 100vh
+  height: 100vh;
+  margin-left: 5px;
 }
 
 .HorizontalSplitter {

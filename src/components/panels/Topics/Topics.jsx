@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CreateTopic from "../../components/TopicsPanel/CreateTopic";
-import TopicsList from "../../components/TopicsPanel/TopicsList";
-import CSS from "./TopicsPanel.module.css";
+import CreateTopic from "../../topics/CreateTopic/CreateTopic";
+import TopicsList from "../../topics/TopicsList";
+import CSS from "./Topics.module.css";
 
-function TopicsPanel() {
-  const [topics, setTopics] = useState(null);
+function Topics() {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
+  const [topics, setTopics] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8000/Topics")
@@ -16,6 +15,7 @@ function TopicsPanel() {
       .then((data) => {
         setTopics(data);
       });
+    console.log("ran");
   }, []);
 
   return (
@@ -24,9 +24,12 @@ function TopicsPanel() {
         <h2 className={CSS.Header}>Topics</h2>
       </div>
       <div className={CSS.ContentContainer}>
-        <div className={CSS.Tag}></div>
-        <div>
-          <div className={CSS.Topic}>
+        <div className={CSS.TagContainer}>
+          <div className={CSS.Tag}>tralalaal</div>
+        </div>
+        <div className={CSS.TopicContainer}>
+          <div className={CSS.TopicList}>
+            {console.log(topics)}
             {topics && <TopicsList topics={topics} />}
           </div>
           <div>
@@ -47,4 +50,4 @@ function TopicsPanel() {
   );
 }
 
-export default TopicsPanel;
+export default Topics;

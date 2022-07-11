@@ -1,13 +1,14 @@
 import { useState } from "react";
+
 import CSS from "./CreateTopic.module.css";
 
 function CreateTopic(props) {
-  const [Name, setName] = useState("");
-  const [Tag, setTag] = useState("");
+  const [name, setName] = useState("");
+  const [tag, setTag] = useState("");
+  const closeModal = props.closeModal;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const topic = { Name, Tag };
+  const handleSubmit = () => {
+    const topic = { name, tag };
 
     fetch("http://localhost:8000/Topics", {
       method: "POST",
@@ -15,8 +16,6 @@ function CreateTopic(props) {
       body: JSON.stringify(topic),
     });
   };
-
-  const closeModal = props.closeModal;
 
   return (
     <div className={CSS.ModalContainer}>
@@ -29,14 +28,14 @@ function CreateTopic(props) {
             className={CSS.input}
             type="text"
             placeholder="Name"
-            value={Name}
+            value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             className={CSS.input}
             type="text"
             placeholder="Tag"
-            value={Tag}
+            value={tag}
             onChange={(e) => setTag(e.target.value)}
           />
         </form>
