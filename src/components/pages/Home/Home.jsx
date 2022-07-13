@@ -3,10 +3,11 @@ import Split from "react-split";
 import Folders from "../../panels/Folders/Folders";
 import VidsPanel from "../../panels/Vids/VidsPanel";
 import Topics from "../../panels/Topics/Topics";
+import "../../../styles/index.css";
 
 function Home() {
   return (
-    <div>
+    <div className="globalContainer">
       <Split
         className="HorizontalSplitter"
         direction="horizontal"

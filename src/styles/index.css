@@ -2,15 +2,22 @@
 
 
 * {
-    margin: 0;
+    margin: 0px;
     font-family: 'Quicksand';
     color: #333;
     box-sizing: border-box
 }
 
+.globalContainer {
+  /* background-color: red; */
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 10px;
+}
+
 
 .VerticalSplitter {
-  height: 100vh;
+  height: calc(100vh - 20px);
   margin-left: 5px;
 }
 
@@ -25,3 +32,4 @@
   border-radius: 5px;
   margin: auto;
 }
+

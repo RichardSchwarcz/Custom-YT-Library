@@ -1,7 +1,6 @@
 .Container {
-    height: 100vh;
     background-color: rgb(240, 240, 240);
-    margin: 10px 5px 10px 10px;
+    margin-right: 5px;
     border-radius: 10px;
     display: grid;
     grid-template-rows: 50px 1.85fr;
