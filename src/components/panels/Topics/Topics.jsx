@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CreateTopicModal from "../../topics/CreateTopicModal/CreateTopicModal";
-import TopicsList from "../../topics/TopicsList";
+import TopicsList from "../../topics/TopicsList/TopicsList";
 import useFetch from "../../../hooks/useFetch";
 import CSS from "./Topics.module.css";
 

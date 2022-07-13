@@ -11,7 +11,7 @@ function CreateTopicModal(props) {
   const topic = () => {
     let topicObj = { name, tag };
     if (topicObj.tag === "") {
-      topicObj.tag = "others";
+      topicObj.tag = "Others";
     }
     return topicObj;
   };

@@ -16,9 +16,54 @@
       "id": 3
     },
     {
-      "name": "tt",
-      "tag": "A",
+      "name": "CSS things",
+      "tag": "Code",
       "id": 4
+    },
+    {
+      "name": "CLT webinars",
+      "tag": "dipl",
+      "id": 5
+    },
+    {
+      "name": "Dlubal",
+      "tag": "dipl",
+      "id": 6
+    },
+    {
+      "name": "Cimbing vids",
+      "tag": "climb",
+      "id": 7
+    },
+    {
+      "name": "Training",
+      "tag": "climb",
+      "id": 8
+    },
+    {
+      "name": "Crypto",
+      "tag": "Others",
+      "id": 9
+    },
+    {
+      "name": "Business shit",
+      "tag": "Others",
+      "id": 10
+    },
+    {
+      "name": "Podcasts",
+      "tag": "Others",
+      "id": 11
+    },
+    {
+      "name": "Interviews",
+      "tag": "Others",
+      "id": 12
+    },
+    {
+      "name": "Education",
+      "tag": "Others",
+      "id": 13
     }
   ]
 }
