@@ -1,8 +1,8 @@
 import { useState } from "react";
-import CreateTopic from "../../topics/CreateTopic/CreateTopic";
+import CreateTopicModal from "../../topics/CreateTopicModal/CreateTopicModal";
 import TopicsList from "../../topics/TopicsList";
-import CSS from "./Topics.module.css";
 import useFetch from "../../../hooks/useFetch";
+import CSS from "./Topics.module.css";
 
 function Topics() {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
@@ -23,7 +23,7 @@ function Topics() {
           </div>
           <div>
             {CreateNewTopicModal && (
-              <CreateTopic
+              <CreateTopicModal
                 onCreate={refetch}
                 closeModal={setCreateNewTopicModal}
               />

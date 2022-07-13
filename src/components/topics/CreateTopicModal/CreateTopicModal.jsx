@@ -1,19 +1,26 @@
 import { useState } from "react";
 import fetchToDB from "../../../helpers/fetchToDB";
 
-import CSS from "./CreateTopic.module.css";
+import CSS from "./CreateTopicModal.module.css";
 
-function CreateTopic(props) {
+function CreateTopicModal(props) {
   const [name, setName] = useState("");
   const [tag, setTag] = useState("");
   const closeModal = props.closeModal;
 
+  const topic = () => {
+    let topicObj = { name, tag };
+    if (topicObj.tag === "") {
+      topicObj.tag = "others";
+    }
+    return topicObj;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const onCreate = props.onCreate;
-    const topic = { name, tag };
 
-    await fetchToDB(topic, "http://localhost:8000/Topics");
+    await fetchToDB(topic(), "http://localhost:8000/Topics");
     await onCreate();
   };
 
@@ -52,4 +59,4 @@ function CreateTopic(props) {
   );
 }
 
-export default CreateTopic;
+export default CreateTopicModal;
