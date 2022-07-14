@@ -17,14 +17,24 @@ function TopicsList(props) {
     <div>
       {groupedTopics.map((items, index) => {
         return (
-          <div key={index} className={CSS.List}>
-            {items.map((topic) => {
-              return (
-                <div key={topic.id} onClick={handleOnClick(topic.name)}>
-                  {topic.name}
-                </div>
-              );
-            })}
+          <div>
+            <div key={items} className={CSS.Tags}>
+              {/* TODO fix key*/}
+              {items[0].tag}
+            </div>
+            <div key={index} className={CSS.List}>
+              {items.map((topic) => {
+                return (
+                  <div
+                    key={topic.id}
+                    className={CSS.Topic}
+                    onClick={handleOnClick(topic.name)}
+                  >
+                    {topic.name}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         );
       })}

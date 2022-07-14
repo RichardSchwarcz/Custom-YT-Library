@@ -1,8 +1,23 @@
 .List {
     margin-bottom: 20px;
-    border-bottom: 1px solid black;
+    border-left: 2px solid black;
     font-weight: 600;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(235, 235, 235);
+    background-image: linear-gradient(to right,  rgb(225, 225, 225), rgb(240, 240, 240));
     border-radius: 5px;
+    
 }
 
+.Topic {
+    margin-left: 5px;
+}
+
+.Topic:hover {
+    margin-left: 10px;
+    background-color: rgb(230, 230, 230);
+}
+
+.Tags {
+    font-weight: 800;
+    text-transform: uppercase;
+}

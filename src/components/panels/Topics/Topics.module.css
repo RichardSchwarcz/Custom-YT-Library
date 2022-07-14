@@ -43,11 +43,12 @@
 
 .TopicContainer {
     grid-area: TopicContainer; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between  ;
 }
 
 .TopicList {
-    display: flex;
-    flex-direction: column;
     margin: 10px 0px 0px 20px;
 }
 
@@ -86,7 +87,3 @@
     background-color: #4CAF50;
 }
 
-.Tag {
-    transform-origin: top left;
-    transform: rotate(-90deg) translateX(-100%);
-}

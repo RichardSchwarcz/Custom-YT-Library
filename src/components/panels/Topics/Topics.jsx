@@ -15,7 +15,7 @@ function Topics() {
       </div>
       <div className={CSS.ContentContainer}>
         <div className={CSS.TagContainer}>
-          <div className={CSS.Tag}>tralalaal</div>
+          <div className={CSS.Tag}></div>
         </div>
         <div className={CSS.TopicContainer}>
           <div className={CSS.TopicList}>
