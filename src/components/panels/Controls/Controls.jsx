@@ -7,10 +7,10 @@ import TopicsList from "../../topics/TopicsList/TopicsList";
 import useFetch from "../../../hooks/useFetch";
 import CSS from "./Controls.module.css";
 
-function Topics() {
+function Controls() {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
   const [AddNewVideoModal, setAddNewVideoModal] = useState(false);
-  const { data, refetch } = useFetch("http://localhost:8000/Topics");
+  const { data, refetch } = useFetch("/Topics");
 
   return (
     <div className={CSS.Container}>
@@ -29,6 +29,7 @@ function Topics() {
             <FontAwesomeIcon
               icon={faVideo}
               size={"lg"}
+              className={CSS.Icon}
               onClick={() => setAddNewVideoModal(true)}
             />
             <div className={CSS.OptionText}>Add Video</div>
@@ -67,4 +68,4 @@ function Topics() {
   );
 }
 
-export default Topics;
+export default Controls;

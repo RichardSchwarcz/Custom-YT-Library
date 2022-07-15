@@ -1,4 +1,4 @@
-function fetchToDB(data, path) {
+function postToDB(data, path) {
   return fetch(path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -6,4 +6,4 @@ function fetchToDB(data, path) {
   });
 }
 
-export default fetchToDB;
+export default postToDB;

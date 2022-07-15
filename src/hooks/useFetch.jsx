@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 
-function useFetch(path) {
+function useFetch(endPoint) {
   const [data, setData] = useState([]);
+
   const jsonResponse = (res) => {
     return res.json();
   };
-  const dataSetter = (data) => {
-    setData(data);
-  };
 
   const fetchData = async () => {
-    const fetchedData = await fetch(path);
+    const fetchedData = await fetch("http://localhost:8000" + endPoint);
     const json = await jsonResponse(fetchedData);
-    dataSetter(json);
+    setData(json);
   };
-
+  // AXIOS
+  // TODO
   const refetch = () => {
     fetchData();
   };

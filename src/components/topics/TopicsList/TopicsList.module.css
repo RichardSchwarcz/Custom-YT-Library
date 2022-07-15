@@ -1,23 +1,27 @@
 .List {
-    margin-bottom: 20px;
-    border-left: 2px solid black;
-    font-weight: 600;
-    background-color: rgb(235, 235, 235);
-    background-image: linear-gradient(to right,  rgb(225, 225, 225), rgb(240, 240, 240));
-    border-radius: 5px;
-    
+  margin-bottom: 20px;
+  border-left: 2px solid black;
+  font-weight: 600;
+  background-color: rgb(235, 235, 235);
+  background-image: linear-gradient(
+    to right,
+    rgb(225, 225, 225),
+    rgb(240, 240, 240)
+  );
+  border-radius: 5px;
 }
 
 .Topic {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .Topic:hover {
-    margin-left: 10px;
-    background-color: rgb(230, 230, 230);
+  margin-left: 10px;
+  background-color: rgb(230, 230, 230);
+  cursor: pointer;
 }
 
 .Tags {
-    font-weight: 800;
-    text-transform: uppercase;
+  font-weight: 800;
+  text-transform: uppercase;
 }

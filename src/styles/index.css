@@ -1,34 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 * {
-    margin: 0px;
-    font-family: 'Quicksand';
-    color: #333;
-    box-sizing: border-box
+  margin: 0px;
+  font-family: "Quicksand";
+  box-sizing: border-box;
 }
-
-.globalContainer {
-  overflow: hidden;
-  margin: 10px;
-  border-radius: 10px;
-}
-
 
 .VerticalSplitter {
-  height: calc(100vh - 20px);
+  height: calc(100vh - 30px);
+  /*30px is 10px margin top 10px margin bottom 10px gutter space*/
   margin-left: 5px;
-}
-
-.HorizontalSplitter {
-  display: flex;
+  width: 100%;
 }
 
 .gutter {
-  background-color: #eee;
+  background-color: rgb(230, 230, 230);
   height: 30px;
   width: 30px;
   border-radius: 5px;
   margin: auto;
 }
 
+.flexContainer {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+}

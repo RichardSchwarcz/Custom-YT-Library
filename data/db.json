@@ -64,12 +64,78 @@
       "name": "Education",
       "tag": "Others",
       "id": 13
+    },
+    {
+      "name": "CSS things2",
+      "tag": "Code",
+      "id": 14
+    },
+    {
+      "name": "CLT webinars2",
+      "tag": "dipl",
+      "id": 15
+    },
+    {
+      "name": "Dlubal2",
+      "tag": "dipl",
+      "id": 16
+    },
+    {
+      "name": "Cimbing vids2",
+      "tag": "climb",
+      "id": 17
+    },
+    {
+      "name": "Training2",
+      "tag": "climb",
+      "id": 18
+    },
+    {
+      "name": "Crypto2",
+      "tag": "Others",
+      "id": 19
+    },
+    {
+      "name": "Business shit2",
+      "tag": "Others",
+      "id": 20
+    },
+    {
+      "name": "Podcasts2",
+      "tag": "Others",
+      "id": 21
+    },
+    {
+      "name": "Interviews2",
+      "tag": "Others",
+      "id": 22
+    },
+    {
+      "name": "Education2",
+      "tag": "Others",
+      "id": 23
+    },
+    {
+      "name": "Podcasts3",
+      "tag": "Others",
+      "id": 24
+    },
+    {
+      "name": "Interviews3",
+      "tag": "Others",
+      "id": 25
+    },
+    {
+      "name": "Education3",
+      "tag": "Others",
+      "id": 26
     }
   ],
   "Videos": [
     {
       "link": "es",
       "topic": "Cimbing vids",
+      "folder": "Not Assigned",
       "id": 1
     }
   ]

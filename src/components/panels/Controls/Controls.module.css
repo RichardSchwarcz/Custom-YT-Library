@@ -1,112 +1,130 @@
 :root {
-    --btnBgColor: #4caf4fa8;
-    --btnBgColorHover: #4CAF50;
+  --btnBgColor: #4caf4fa8;
+  --btnBgColorHover: #4caf50;
+  --btnHeight: 50px;
+  --globalMargin: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(200, 200, 200);
+  border-radius: 10px;
 }
 
 .Container {
-    background-color: rgb(240, 240, 240);
-    margin-right: 5px;
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: 50px 1.85fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: 
-        'Title'
-        'ContentContainer';
+  background-color: rgb(240, 240, 240);
+  height: calc(100vh - 30px);
+  width: 250px;
+  margin-right: 5px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: var(--btnHeight) 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Title"
+    "ContentContainer";
 }
 
-.Title { 
-    grid-area: Title;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border-bottom: 2px black solid;
+.Title {
+  grid-area: Title;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px black solid;
 }
 
-
-.ContentContainer {  
-    display: grid;
-    grid-template-columns: 0.3fr 1.7fr;
-    grid-template-rows: 1.9fr 0.1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "OptionContainer TopicContainer"
-      "TagButton TopicButton";
-    grid-area: ContentContainer;
+.ContentContainer {
+  display: grid;
+  max-height: calc(100vh - var(--btnHeight) - var(--globalMargin) * 2);
+  grid-template-columns: 50px 1.7fr;
+  grid-template-rows: 1.9fr 40px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "OptionContainer TopicContainer"
+    "TagButton TopicButton";
+  grid-area: ContentContainer;
 }
-
 
 .OptionContainer {
-    grid-area: OptionContainer;
-    border-right: 1px solid black;
-    display: flex;
-    flex-direction: column;
+  grid-area: OptionContainer;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .TopicContainer {
-    grid-area: TopicContainer; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between  ;
+  grid-area: TopicContainer;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .TopicList {
-    margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 20px;
 }
 
-.TopicButton { 
-    grid-area: TopicButton;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--btnBgColor);
-    border-bottom-right-radius: 10px;
-    border-top: 2px black solid;
-    font-weight: 700;
-    transition-duration: 0.4s;
+.TopicButton {
+  grid-area: TopicButton;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--btnBgColor);
+  border-bottom-right-radius: 10px;
+  border-top: 2px black solid;
+  font-weight: 700;
+  transition-duration: 0.4s;
 }
 
 .TopicButton:hover {
-    background-color: var(--btnBgColorHover);
+  background-color: var(--btnBgColorHover);
+  cursor: pointer;
 }
 
-.TagButton { 
-    grid-area: TagButton; 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    text-align: center;
-    background-color: var(--btnBgColor);
-    border-bottom-left-radius: 10px;
-    border-top: 2px black solid;
-    border-right: 1px black solid;
-    font-weight: 700;
-    transition-duration: 0.4s;
+.TagButton {
+  grid-area: TagButton;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+  background-color: var(--btnBgColor);
+  border-bottom-left-radius: 10px;
+  border-top: 2px black solid;
+  border-right: 1px black solid;
+  font-weight: 700;
+  transition-duration: 0.4s;
 }
 
 .TagButton:hover {
-    background-color: var(--btnBgColorHover)
+  background-color: var(--btnBgColorHover);
 }
 
 .Options {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .OptionText {
-    margin: 0px 5px 20px 5px;
-    font-size: small;
+  margin: 0px 5px 20px 5px;
+  font-size: small;
 }
 
 .Icon {
-    color: var(--btnBgColor);
-    margin-top: 10px
+  color: #4caf4f;
+}
+
+.Icon:hover {
+  color: #00c407;
+  cursor: pointer;
 }

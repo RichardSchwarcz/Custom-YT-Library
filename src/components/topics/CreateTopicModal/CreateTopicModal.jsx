@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fetchToDB from "../../../helpers/fetchToDB";
+import postToDB from "../../../helpers/fetchToDB";
 
 import CSS from "./CreateTopicModal.module.css";
 
@@ -20,7 +20,7 @@ function CreateTopicModal(props) {
     e.preventDefault();
     const onCreate = props.onCreate;
 
-    await fetchToDB(topic(), "http://localhost:8000/Topics");
+    await postToDB(topic(), "http://localhost:8000/Topics");
     await onCreate();
   };
 

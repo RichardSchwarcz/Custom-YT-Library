@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import groupByTag from "../../../helpers/GroupTopics";
+import groupByTag from "../../../helpers/groupTopics";
 import CSS from "./TopicsList.module.css";
 
 function TopicsList(props) {
