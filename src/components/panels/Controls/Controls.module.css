@@ -1,3 +1,8 @@
+:root {
+    --btnBgColor: #4caf4fa8;
+    --btnBgColorHover: #4CAF50;
+}
+
 .Container {
     background-color: rgb(240, 240, 240);
     margin-right: 5px;
@@ -29,15 +34,17 @@
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "TagContainer TopicContainer"
+      "OptionContainer TopicContainer"
       "TagButton TopicButton";
     grid-area: ContentContainer;
 }
 
 
-.TagContainer {
-    grid-area: TagContainer;
+.OptionContainer {
+    grid-area: OptionContainer;
     border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -58,7 +65,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: #4caf4fa8;
+    background-color: var(--btnBgColor);
     border-bottom-right-radius: 10px;
     border-top: 2px black solid;
     font-weight: 700;
@@ -66,16 +73,16 @@
 }
 
 .TopicButton:hover {
-    background-color: #4CAF50;
+    background-color: var(--btnBgColorHover);
 }
 
 .TagButton { 
     grid-area: TagButton; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     text-align: center;
-    background-color: #4caf4fa8;
+    background-color: var(--btnBgColor);
     border-bottom-left-radius: 10px;
     border-top: 2px black solid;
     border-right: 1px black solid;
@@ -84,6 +91,22 @@
 }
 
 .TagButton:hover {
-    background-color: #4CAF50;
+    background-color: var(--btnBgColorHover)
 }
 
+.Options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.OptionText {
+    margin: 0px 5px 20px 5px;
+    font-size: small;
+}
+
+.Icon {
+    color: var(--btnBgColor);
+    margin-top: 10px
+}

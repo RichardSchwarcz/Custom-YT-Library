@@ -2,9 +2,23 @@
     background-color: rgb(240, 240, 240);
     margin-top: 5px;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Title"
+      "VidsContainer";
 }
 
-.Header {
+.Title {
+    grid-area: Title; 
     text-align: center;
     padding-top: 10px;
+    border-bottom: 2px black solid;
+}
+
+.VidsContainer {
+    grid-area: VidsContainer;
 }

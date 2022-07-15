@@ -1,0 +1,48 @@
+.ModalContainer {
+    padding: 5px 10px 10px 10px;
+    width: 100%;
+    background-color: antiquewhite;
+
+}
+
+.Title {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+
+.Buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.CancelButton {
+    background-color: #af574ca8;
+    margin: 5px 5px 0px 0px;
+    width: 50%;
+    text-align: center; 
+    border-radius: 4px;
+}
+
+.CancelButton:hover {
+    background-color: #af4e4c;
+}
+
+.SubmitButton {
+    background-color: #4caf4fa8;
+    margin-top: 5px;
+    width: 50%; 
+    text-align: center;
+    border-radius: 4px;
+}
+
+.SubmitButton:hover {
+    background-color: #4CAF50;
+}
+
