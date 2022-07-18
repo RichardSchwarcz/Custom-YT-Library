@@ -1,25 +1,25 @@
 .Container {
-    background-color: rgb(240, 240, 240);
-    margin-bottom: 5px;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "Title"
-      "FoldersContainer";
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 5px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Title"
+    "FoldersContainer";
+  overflow: hidden;
 }
-
 
 .Title {
-    grid-area: Title; 
-    text-align: center;
-    padding-top: 10px;
-    border-bottom: 2px black solid;
+  grid-area: Title;
+  text-align: center;
+  padding-top: 10px;
+  border-bottom: 2px black solid;
 }
 
- 
-.FoldersContainer { grid-area: FoldersContainer; }
-
+.FoldersContainer {
+  grid-area: FoldersContainer;
+}

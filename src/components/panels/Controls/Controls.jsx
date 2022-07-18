@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolderPlus, faVideo } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFolderPlus,
+  faRectangleXmark,
+  faTrashCan,
+  faVideo,
+} from "@fortawesome/free-solid-svg-icons";
 import CreateTopicModal from "../../topics/CreateTopicModal/CreateTopicModal";
 import AddVideoModal from "../../options/AddVideoModal";
+import NewFolderModal from "../../options/NewFolderModal";
 import TopicsList from "../../topics/TopicsList/TopicsList";
 import useFetch from "../../../hooks/useFetch";
 import CSS from "./Controls.module.css";
@@ -10,6 +16,8 @@ import CSS from "./Controls.module.css";
 function Controls() {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
   const [AddNewVideoModal, setAddNewVideoModal] = useState(false);
+  const [createNewFolderModal, setCreateNewFolderModal] = useState(false);
+
   const { data, refetch } = useFetch("/Topics");
 
   return (
@@ -24,15 +32,23 @@ function Controls() {
               icon={faFolderPlus}
               size={"lg"}
               className={CSS.Icon}
+              onClick={() => setCreateNewFolderModal(true)}
             />
             <div className={CSS.OptionText}>New Folder</div>
             <FontAwesomeIcon
               icon={faVideo}
               size={"lg"}
-              className={CSS.Icon}
+              className={CSS.ModifiedVideoIcon}
               onClick={() => setAddNewVideoModal(true)}
             />
+            <div className={CSS.VideoIconModification}>+</div>
             <div className={CSS.OptionText}>Add Video</div>
+            <FontAwesomeIcon
+              icon={faRectangleXmark}
+              size={"lg"}
+              className={CSS.Icon}
+            />
+            <div className={CSS.OptionText}>Remove Topic</div>
           </div>
         </div>
         <div className={CSS.TopicContainer}>
@@ -55,8 +71,22 @@ function Controls() {
               />
             )}
           </div>
+          <div>
+            {createNewFolderModal && (
+              <NewFolderModal
+                onCreate={refetch}
+                closeModal={setCreateNewFolderModal}
+              />
+            )}
+          </div>
         </div>
-        <div className={CSS.TagButton}>...</div>
+        <div className={CSS.TagButton}>
+          <FontAwesomeIcon
+            icon={faTrashCan}
+            size={"lg"}
+            className={CSS.TrashIcon}
+          />
+        </div>
         <div
           className={CSS.TopicButton}
           onClick={() => setCreateNewTopicModal(true)}

@@ -16,7 +16,7 @@
 
 .Container {
   background-color: rgb(240, 240, 240);
-  height: calc(100vh - 30px);
+  height: calc(100vh - var(--globalMargin) * 2);
   width: 250px;
   margin-right: 5px;
   border-radius: 10px;
@@ -94,13 +94,11 @@
   grid-area: TagButton;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  text-align: center;
+  justify-content: center;
   background-color: var(--btnBgColor);
   border-bottom-left-radius: 10px;
   border-top: 2px black solid;
   border-right: 1px black solid;
-  font-weight: 700;
   transition-duration: 0.4s;
 }
 
@@ -126,5 +124,28 @@
 
 .Icon:hover {
   color: #00c407;
+  cursor: pointer;
+}
+
+.ModifiedVideoIcon {
+  color: #4caf4f;
+  position: relative;
+}
+
+.ModifiedVideoIcon:hover {
+  color: #00c407;
+  cursor: pointer;
+}
+
+.VideoIconModification {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  position: absolute;
+  left: 26.5px;
+  top: 142px;
+}
+
+.VideoIconModification:hover {
   cursor: pointer;
 }
