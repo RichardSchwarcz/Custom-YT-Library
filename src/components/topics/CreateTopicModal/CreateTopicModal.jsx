@@ -1,6 +1,6 @@
 import { useState } from "react";
-import postToDB from "../../../helpers/fetchToDB";
-
+import postToDB from "../../../helpers/postToDB";
+import ReactDom from "react-dom";
 import CSS from "./CreateTopicModal.module.css";
 
 function CreateTopicModal(props) {
@@ -24,7 +24,7 @@ function CreateTopicModal(props) {
     await onCreate();
   };
 
-  return (
+  return ReactDom.createPortal(
     <div className={CSS.ModalContainer}>
       <div className={CSS.Title}>
         <h3>Create New Topic</h3>
@@ -55,7 +55,8 @@ function CreateTopicModal(props) {
           Submit
         </button>
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal")
   );
 }
 

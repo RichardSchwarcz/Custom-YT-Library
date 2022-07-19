@@ -1,7 +1,12 @@
 .ModalContainer {
+  position: fixed;
+  bottom: 50px;
+  left: 60px;
   padding: 5px 10px 10px 10px;
-  width: 100%;
-  background-color: antiquewhite;
+  width: 180px;
+  background-color: rgb(255, 210, 150);
+  border-radius: 10px 10px 0px 00px;
+  z-index: 1000;
 }
 
 .Title {

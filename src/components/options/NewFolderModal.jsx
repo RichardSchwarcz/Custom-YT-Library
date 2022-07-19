@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCurrentFolder from "../../hooks/useCurrentFolder";
-import fetchToDB from "../../helpers/fetchToDB";
-
+import postToDB from "../../helpers/postToDB";
+import ReactDom from "react-dom";
 import CSS from "./NewFolderModal.module.css";
 
 function AddFolderModal(props) {
@@ -15,11 +15,11 @@ function AddFolderModal(props) {
     e.preventDefault();
     const onCreate = props.onCreate;
 
-    await fetchToDB(folder, "http://localhost:8000/Folders");
+    await postToDB(folder, "http://localhost:8000/Folders");
     await onCreate();
   };
 
-  return (
+  return ReactDom.createPortal(
     <div className={CSS.ModalContainer}>
       <div className={CSS.Title}>
         <h3>Create New Folder</h3>
@@ -43,7 +43,8 @@ function AddFolderModal(props) {
           Submit
         </button>
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal")
   );
 }
 

@@ -41,7 +41,12 @@ function Controls() {
               className={CSS.ModifiedVideoIcon}
               onClick={() => setAddNewVideoModal(true)}
             />
-            <div className={CSS.VideoIconModification}>+</div>
+            <div
+              className={CSS.VideoIconModification}
+              onClick={() => setAddNewVideoModal(true)}
+            >
+              +
+            </div>
             <div className={CSS.OptionText}>Add Video</div>
             <FontAwesomeIcon
               icon={faRectangleXmark}

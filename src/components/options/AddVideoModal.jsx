@@ -1,6 +1,6 @@
 import { useState } from "react";
-import fetchToDB from "../../helpers/fetchToDB";
-
+import postToDB from "../../helpers/postToDB";
+import ReactDom from "react-dom";
 import CSS from "./AddVideoModal.module.css";
 
 function AddVideoModal(props) {
@@ -14,11 +14,11 @@ function AddVideoModal(props) {
     e.preventDefault();
     const onCreate = props.onCreate;
 
-    await fetchToDB(video, "http://localhost:8000/Videos");
+    await postToDB(video, "http://localhost:8000/Videos");
     await onCreate();
   };
 
-  return (
+  return ReactDom.createPortal(
     <div className={CSS.ModalContainer}>
       <div className={CSS.Title}>
         <h3>Add New Video</h3>
@@ -49,7 +49,8 @@ function AddVideoModal(props) {
           Submit
         </button>
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal")
   );
 }
 

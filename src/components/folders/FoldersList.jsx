@@ -4,6 +4,7 @@ import { faFolderClosed } from "@fortawesome/free-solid-svg-icons";
 
 function FoldersList(props) {
   const folders = props.folders;
+
   return (
     <div className={CSS.FoldersList}>
       {folders.map((folders) => {
