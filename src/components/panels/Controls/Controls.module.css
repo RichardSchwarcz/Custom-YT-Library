@@ -109,17 +109,12 @@
 .Options {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
   text-align: center;
-}
-
-.OptionText {
-  margin: 0px 5px 20px 5px;
-  font-size: small;
 }
 
 .Icon {
   color: #4caf4f;
+  margin-top: 30px;
 }
 
 .Icon:hover {
@@ -130,6 +125,7 @@
 .ModifiedVideoIcon {
   color: #4caf4f;
   position: relative;
+  margin-top: 30px;
 }
 
 .ModifiedVideoIcon:hover {
@@ -143,7 +139,7 @@
   font-size: 15px;
   position: absolute;
   left: 26.5px;
-  top: 142px;
+  top: 140px;
 }
 
 .VideoIconModification:hover {
