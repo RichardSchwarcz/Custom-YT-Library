@@ -1,0 +1,30 @@
+.VidsList {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.FolderName {
+  font-weight: 600;
+}
+
+.Vids {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0px 30px 10px 0px;
+}
+
+.Icon {
+  color: #000000;
+}
+
+.Icon:hover {
+  color: #3a3a3a;
+  cursor: pointer;
+}
+
+.FolderName:hover {
+  cursor: pointer;
+}

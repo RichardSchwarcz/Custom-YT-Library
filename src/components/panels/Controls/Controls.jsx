@@ -42,7 +42,7 @@ function Controls() {
               onMouseOver={() => setHoverFolderIcon(true)}
               onMouseOut={() => setHoverFolderIcon(false)}
             />
-            {hoverFolderIcon && <IconTextModal text={"New Folder"} />}
+            {hoverFolderIcon && <IconTextModal text="New Folder" />}
             <FontAwesomeIcon
               icon={faVideo}
               size={"lg"}
@@ -59,7 +59,7 @@ function Controls() {
             >
               +
             </div>
-            {hoverVideoIcon && <IconTextModal text={"Add video"} />}
+            {hoverVideoIcon && <IconTextModal text="Add video" />}
             <FontAwesomeIcon
               icon={faRectangleXmark}
               size={"lg"}
@@ -67,7 +67,7 @@ function Controls() {
               onMouseOver={() => setHoverRemoveIcon(true)}
               onMouseOut={() => setHoverRemoveIcon(false)}
             />
-            {hoverRemoveIcon && <IconTextModal text={"Remove Topic"} />}
+            {hoverRemoveIcon && <IconTextModal text="Remove Topic" />}
           </div>
         </div>
         <div className={CSS.TopicContainer}>
@@ -107,7 +107,7 @@ function Controls() {
             onMouseOver={() => setHoverTrashIcon(true)}
             onMouseOut={() => setHoverTrashIcon(false)}
           />
-          {hoverTrashIcon && <IconTextModal text={"Trash"} />}
+          {hoverTrashIcon && <IconTextModal text="Trash" />}
         </div>
         <div
           className={CSS.TopicButton}

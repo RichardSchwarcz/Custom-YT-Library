@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Split from "react-split";
 import Folders from "../panels/Folders/Folders";
-import VidsPanel from "../panels/Vids/VidsPanel";
+import Vids from "../panels/Vids/Vids";
 import Topics from "../panels/Controls/Controls";
 import "../../styles/index.css";
 
@@ -20,7 +20,7 @@ function Home() {
         gutterSize={5}
       >
         <Folders />
-        <VidsPanel />
+        <Vids />
       </Split>
     </div>
   );

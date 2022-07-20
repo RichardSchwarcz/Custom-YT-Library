@@ -17,12 +17,9 @@ function TopicsList(props) {
     <div>
       {groupedTopics.map((items, index) => {
         return (
-          <div>
-            <div key={items} className={CSS.Tags}>
-              {/* TODO fix key*/}
-              {items[0].tag}
-            </div>
-            <div key={index} className={CSS.List}>
+          <div key={items[0].tag}>
+            <div className={CSS.Tags}>{items[0].tag}</div>
+            <div className={CSS.List}>
               {items.map((topic) => {
                 return (
                   <div
