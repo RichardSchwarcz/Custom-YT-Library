@@ -16,6 +16,5 @@
 *Youtube video ID*
 `https://www.youtube.com/watch?v=`*cF2lQ_gZeA8*`&list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A&index=1&t=2s&ab_channel=Codevolution`
 
-
 *Youtube video thumbnail API example*
-`https://img.youtube.com/vi/<insert-youtube-video-id-here>/0.jpg`
+`https://img.youtube.com/vi/cF2lQ_gZeA8/0.jpg`

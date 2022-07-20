@@ -1,21 +1,21 @@
-import CSS from "./FoldersList.module.css";
+// import CSS from "./FoldersList.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderClosed } from "@fortawesome/free-solid-svg-icons";
 
-function FoldersList(props) {
-  const folders = props.folders;
+function VidsList(props) {
+  const vids = props.vids;
 
   return (
-    <div className={CSS.FoldersList}>
-      {folders.map((folders) => {
+    <div className={CSS.VidsList}>
+      {vids.map((vids) => {
         return (
-          <div key={folders.id} className={CSS.Folder}>
+          <div key={vids} className={CSS.Vids}>
             <FontAwesomeIcon
               icon={faFolderClosed}
               size={"2xl"}
               className={CSS.Icon}
             />
-            <div className={CSS.FolderName}>{folders.name}</div>
+            <div className={CSS.FolderName}>{vids.name}</div>
           </div>
         );
       })}
@@ -23,4 +23,4 @@ function FoldersList(props) {
   );
 }
 
-export default FoldersList;
+export default VidsList;

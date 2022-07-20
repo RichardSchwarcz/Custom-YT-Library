@@ -1,4 +1,11 @@
 import { useState } from "react";
+import useFetch from "../../../hooks/useFetch";
+import { CreateTopicModal, AddVideoModal, NewFolderModal } from "../../modals/";
+import { TopicsList } from "../../listings";
+import OptionIconsTooltip from "../../tooltips/OptionIconsTooltip";
+
+import CSS from "./Controls.module.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFolderPlus,
@@ -6,13 +13,6 @@ import {
   faTrashCan,
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
-import CreateTopicModal from "../../topics/CreateTopicModal/CreateTopicModal";
-import AddVideoModal from "../../options/AddVideoModal";
-import NewFolderModal from "../../options/NewFolderModal";
-import IconTextModal from "../../options/IconTextModal";
-import TopicsList from "../../topics/TopicsList/TopicsList";
-import useFetch from "../../../hooks/useFetch";
-import CSS from "./Controls.module.css";
 
 function Controls() {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
@@ -42,7 +42,7 @@ function Controls() {
               onMouseOver={() => setHoverFolderIcon(true)}
               onMouseOut={() => setHoverFolderIcon(false)}
             />
-            {hoverFolderIcon && <IconTextModal text="New Folder" />}
+            {hoverFolderIcon && <OptionIconsTooltip text="New Folder" />}
             <FontAwesomeIcon
               icon={faVideo}
               size={"lg"}
@@ -59,7 +59,7 @@ function Controls() {
             >
               +
             </div>
-            {hoverVideoIcon && <IconTextModal text="Add video" />}
+            {hoverVideoIcon && <OptionIconsTooltip text="Add video" />}
             <FontAwesomeIcon
               icon={faRectangleXmark}
               size={"lg"}
@@ -67,7 +67,7 @@ function Controls() {
               onMouseOver={() => setHoverRemoveIcon(true)}
               onMouseOut={() => setHoverRemoveIcon(false)}
             />
-            {hoverRemoveIcon && <IconTextModal text="Remove Topic" />}
+            {hoverRemoveIcon && <OptionIconsTooltip text="Remove Topic" />}
           </div>
         </div>
         <div className={CSS.TopicContainer}>
@@ -107,7 +107,7 @@ function Controls() {
             onMouseOver={() => setHoverTrashIcon(true)}
             onMouseOut={() => setHoverTrashIcon(false)}
           />
-          {hoverTrashIcon && <IconTextModal text="Trash" />}
+          {hoverTrashIcon && <OptionIconsTooltip text="Trash" />}
         </div>
         <div
           className={CSS.TopicButton}

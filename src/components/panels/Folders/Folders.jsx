@@ -1,5 +1,5 @@
 import CSS from "./Folders.module.css";
-import FoldersList from "../../folders/FoldersList";
+import FoldersList from "../../listings/FoldersList/FoldersList";
 import useCurrentFolder from "../../../hooks/useCurrentFolder";
 import useFetch from "../../../hooks/useFetch";
 
@@ -11,7 +11,7 @@ function Folders() {
     const filtered = data.filter(
       (folder) => folder.topic === currentFolderName
     );
-    return data && <FoldersList folders={filtered} />;
+    return filtered && <FoldersList folders={filtered} />;
   }
 
   return (

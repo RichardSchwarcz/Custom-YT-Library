@@ -1,7 +1,7 @@
 import ReactDom from "react-dom";
-import CSS from "./IconTextModal.module.css";
+import CSS from "./OptionIconsTooltip.module.css";
 
-function IconTextModal(props) {
+function OptionIconsTooltip(props) {
   const text = props.text;
   return ReactDom.createPortal(
     <div className={CSS.Text}>{text}</div>,
@@ -9,4 +9,4 @@ function IconTextModal(props) {
   );
 }
 
-export default IconTextModal;
+export default OptionIconsTooltip;

@@ -1,5 +1,5 @@
 import CSS from "./Vids.module.css";
-import VidsList from "../../vids/VidsList";
+import { VidsList } from "../../listings";
 import useCurrentFolder from "../../../hooks/useCurrentFolder";
 import useFetch from "../../../hooks/useFetch";
 

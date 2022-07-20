@@ -1,0 +1,30 @@
+.ElementList {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.ElementName {
+  font-weight: 600;
+}
+
+.Element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0px 30px 10px 0px;
+}
+
+.Icon {
+  color: #000000;
+}
+
+.Icon:hover {
+  color: #3a3a3a;
+  cursor: pointer;
+}
+
+.ElementName:hover {
+  cursor: pointer;
+}
