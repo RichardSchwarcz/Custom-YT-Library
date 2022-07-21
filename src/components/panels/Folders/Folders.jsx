@@ -6,8 +6,8 @@ import { useParams } from "react-router-dom";
 
 function Folders() {
   const { data } = useFetch("/Folders");
-  const topicName = useParams();
-  console.log(topicName);
+  const path = useParams();
+  console.log(path);
 
   const currentFolderName = useCurrentFolder();
   // TODO
@@ -20,8 +20,9 @@ function Folders() {
 
   return (
     <div className={CSS.Container}>
-      <div className={CSS.Title}>
-        <h2>{currentFolderName} Folders</h2>
+      <div className={CSS.TitleContainer}>
+        <h2 className={CSS.Title}>Folders</h2>
+        <h2 className={CSS.TopicName}>{path.topicName}</h2>
       </div>
       <div className={CSS.FoldersContainer}>{showFolders(data)}</div>
     </div>

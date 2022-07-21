@@ -3,132 +3,80 @@
     {
       "name": "React",
       "tag": "Code",
+      "deleted": "notDeleted",
       "id": 1
     },
     {
       "name": "CS Shit",
       "tag": "Code",
+      "deleted": "notDeleted",
       "id": 2
     },
     {
       "name": "JS Functions",
       "tag": "Code",
+      "deleted": "notDeleted",
       "id": 3
     },
     {
       "name": "CSS things",
       "tag": "Code",
+      "deleted": "notDeleted",
       "id": 4
     },
     {
       "name": "CLT webinars",
       "tag": "dipl",
+      "deleted": "notDeleted",
       "id": 5
     },
     {
       "name": "Dlubal",
       "tag": "dipl",
+      "deleted": "notDeleted",
       "id": 6
     },
     {
       "name": "Cimbing vids",
       "tag": "climb",
+      "deleted": "notDeleted",
       "id": 7
     },
     {
       "name": "Training",
       "tag": "climb",
+      "deleted": "notDeleted",
       "id": 8
     },
     {
       "name": "Crypto",
       "tag": "Others",
+      "deleted": "notDeleted",
       "id": 9
     },
     {
       "name": "Business shit",
       "tag": "Others",
+      "deleted": "notDeleted",
       "id": 10
     },
     {
       "name": "Podcasts",
       "tag": "Others",
+      "deleted": "notDeleted",
       "id": 11
     },
     {
       "name": "Interviews",
       "tag": "Others",
+      "deleted": "notDeleted",
       "id": 12
     },
     {
       "name": "Education",
       "tag": "Others",
+      "deleted": "notDeleted",
       "id": 13
-    },
-    {
-      "name": "CSS things2",
-      "tag": "Code",
-      "id": 14
-    },
-    {
-      "name": "CLT webinars2",
-      "tag": "dipl",
-      "id": 15
-    },
-    {
-      "name": "Dlubal2",
-      "tag": "dipl",
-      "id": 16
-    },
-    {
-      "name": "Cimbing vids2",
-      "tag": "climb",
-      "id": 17
-    },
-    {
-      "name": "Training2",
-      "tag": "climb",
-      "id": 18
-    },
-    {
-      "name": "Crypto2",
-      "tag": "Others",
-      "id": 19
-    },
-    {
-      "name": "Business shit2",
-      "tag": "Others",
-      "id": 20
-    },
-    {
-      "name": "Podcasts2",
-      "tag": "Others",
-      "id": 21
-    },
-    {
-      "name": "Interviews2",
-      "tag": "Others",
-      "id": 22
-    },
-    {
-      "name": "Education2",
-      "tag": "Others",
-      "id": 23
-    },
-    {
-      "name": "Podcasts3",
-      "tag": "Others",
-      "id": 24
-    },
-    {
-      "name": "Interviews3",
-      "tag": "Others",
-      "id": 25
-    },
-    {
-      "name": "Education3",
-      "tag": "Others",
-      "id": 26
     }
   ],
   "Videos": [
@@ -145,25 +93,36 @@
       "name": "Hooks",
       "topic": "React",
       "parent": "Home",
+      "deleted": "notDeleted",
       "id": 1
     },
     {
       "name": "Tester",
       "topic": "React",
+      "parent": "Home",
+      "deleted": "notDeleted",
       "id": 2
     },
     {
       "name": "testerCS",
       "topic": "CS Shit",
+      "parent": "Home",
+      "deleted": "notDeleted",
       "id": 3
     },
     {
       "name": "useState",
       "topic": "React",
       "parent": "Hooks",
+      "deleted": "notDeleted",
       "id": 4
+    },
+    {
+      "name": "ww",
+      "topic": "React",
+      "parent": "Home",
+      "deleted": "notDeleted",
+      "id": 5
     }
-  ],
-  "RemovedTopics": [],
-  "RemovedFolders": []
+  ]
 }

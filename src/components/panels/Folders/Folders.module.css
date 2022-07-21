@@ -8,16 +8,31 @@
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "Title"
+    "TitleContainer"
     "FoldersContainer";
   overflow: hidden;
 }
 
+.TitleContainer {
+  grid-area: TitleContainer;
+  text-align: center;
+  border-bottom: 2px black solid;
+  display: grid;
+  grid-template-columns: 200px 1.7fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "TopicName Title";
+}
+
 .Title {
   grid-area: Title;
-  text-align: center;
   padding-top: 10px;
-  border-bottom: 2px black solid;
+  margin-right: 200px;
+}
+
+.TopicName {
+  grid-area: TopicName;
+  padding-top: 10px;
+  border-right: 1px solid;
 }
 
 .FoldersContainer {

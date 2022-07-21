@@ -109,7 +109,6 @@
 .Options {
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .Icon {
@@ -119,29 +118,5 @@
 
 .Icon:hover {
   color: #00c407;
-  cursor: pointer;
-}
-
-.ModifiedVideoIcon {
-  color: #4caf4f;
-  position: relative;
-  margin-top: 30px;
-}
-
-.ModifiedVideoIcon:hover {
-  color: #00c407;
-  cursor: pointer;
-}
-
-.VideoIconModification {
-  color: rgb(240, 240, 240);
-  font-weight: 600;
-  font-size: 15px;
-  position: absolute;
-  left: 26.5px;
-  top: 190px;
-}
-
-.VideoIconModification:hover {
   cursor: pointer;
 }

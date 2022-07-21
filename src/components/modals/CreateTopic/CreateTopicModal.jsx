@@ -10,7 +10,8 @@ function CreateTopicModal(props) {
   const closeModal = props.closeModal;
 
   const topic = () => {
-    let topicObj = { name, tag };
+    const deleted = "notDeleted";
+    let topicObj = { name, tag, deleted };
     if (topicObj.tag === "") {
       topicObj.tag = "Others";
     }

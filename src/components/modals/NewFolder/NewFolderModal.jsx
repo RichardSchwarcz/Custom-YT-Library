@@ -10,7 +10,8 @@ function AddFolderModal(props) {
 
   const closeModal = props.closeModal;
   const topic = useCurrentFolder();
-  const folder = { name, topic };
+  const deleted = "notDeleted";
+  const folder = { name, topic, deleted };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

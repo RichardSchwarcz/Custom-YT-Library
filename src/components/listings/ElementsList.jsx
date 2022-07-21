@@ -10,6 +10,7 @@ function ElementsList(props) {
           <div key={element.name} className={CSS.Element}>
             <FontAwesomeIcon icon={icon} size={size} className={CSS.Icon} />
             <div className={CSS.ElementName}>{element.name}</div>
+            <div className={CSS.Delete}>delete</div>
           </div>
         );
       })}

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { CreateTopicModal, AddVideoModal, NewFolderModal } from "../../modals/";
 import { TopicsList } from "../../listings";
-import OptionIconsTooltip from "../../tooltips/OptionIconsTooltip";
 
 import CSS from "./Controls.module.css";
 
@@ -11,21 +10,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFolderPlus,
   faHouse,
-  faRectangleXmark,
+  faPenToSquare,
   faTrashCan,
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+import Tooltip from "@mui/material/Tooltip";
 
 function Controls() {
   const [CreateNewTopicModal, setCreateNewTopicModal] = useState(false);
   const [AddNewVideoModal, setAddNewVideoModal] = useState(false);
   const [createNewFolderModal, setCreateNewFolderModal] = useState(false);
-
-  const [hoverHomeIcon, setHoverHomeIcon] = useState(false);
-  const [hoverFolderIcon, setHoverFolderIcon] = useState(false);
-  const [hoverVideoIcon, setHoverVideoIcon] = useState(false);
-  const [hoverRemoveIcon, setHoverRemoveIcon] = useState(false);
-  const [hoverTrashIcon, setHoverTrashIcon] = useState(false);
 
   const { data, refetch } = useFetch("/Topics");
 
@@ -39,49 +33,38 @@ function Controls() {
       <div className={CSS.ContentContainer}>
         <div className={CSS.OptionContainer}>
           <div className={CSS.Options}>
-            <FontAwesomeIcon
-              icon={faHouse}
-              size={"lg"}
-              className={CSS.Icon}
-              onClick={() => navigate("/")}
-              onMouseOver={() => setHoverHomeIcon(true)}
-              onMouseOut={() => setHoverHomeIcon(false)}
-            />
-            {hoverHomeIcon && <OptionIconsTooltip text="Home" />}
-            <FontAwesomeIcon
-              icon={faFolderPlus}
-              size={"lg"}
-              className={CSS.Icon}
-              onClick={() => setCreateNewFolderModal(true)}
-              onMouseOver={() => setHoverFolderIcon(true)}
-              onMouseOut={() => setHoverFolderIcon(false)}
-            />
-            {hoverFolderIcon && <OptionIconsTooltip text="New Folder" />}
-            <FontAwesomeIcon
-              icon={faVideo}
-              size={"lg"}
-              className={CSS.ModifiedVideoIcon}
-              onClick={() => setAddNewVideoModal(true)}
-              onMouseOver={() => setHoverVideoIcon(true)}
-              onMouseOut={() => setHoverVideoIcon(false)}
-            />
-            <div
-              className={CSS.VideoIconModification}
-              onClick={() => setAddNewVideoModal(true)}
-              onMouseOver={() => setHoverVideoIcon(true)}
-              onMouseOut={() => setHoverVideoIcon(false)}
-            >
-              +
-            </div>
-            {hoverVideoIcon && <OptionIconsTooltip text="Add video" />}
-            <FontAwesomeIcon
-              icon={faRectangleXmark}
-              size={"lg"}
-              className={CSS.Icon}
-              onMouseOver={() => setHoverRemoveIcon(true)}
-              onMouseOut={() => setHoverRemoveIcon(false)}
-            />
-            {hoverRemoveIcon && <OptionIconsTooltip text="Remove Topic" />}
+            <Tooltip title="Home" placement="right" arrow>
+              <FontAwesomeIcon
+                icon={faHouse}
+                size={"lg"}
+                className={CSS.Icon}
+                onClick={() => navigate("/")}
+              />
+            </Tooltip>
+
+            <Tooltip title="New Folder" placement="right" arrow>
+              <FontAwesomeIcon
+                icon={faFolderPlus}
+                size={"lg"}
+                className={CSS.Icon}
+                onClick={() => setCreateNewFolderModal(true)}
+              />
+            </Tooltip>
+            <Tooltip title="Add video" placement="right" arrow>
+              <FontAwesomeIcon
+                icon={faVideo}
+                size={"lg"}
+                className={CSS.Icon}
+                onClick={() => setAddNewVideoModal(true)}
+              />
+            </Tooltip>
+            <Tooltip title="Edit" placement="right" arrow>
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                size={"lg"}
+                className={CSS.Icon}
+              />
+            </Tooltip>
           </div>
         </div>
         <div className={CSS.TopicContainer}>
@@ -114,21 +97,22 @@ function Controls() {
           </div>
         </div>
         <div className={CSS.TagButton}>
-          <FontAwesomeIcon
-            icon={faTrashCan}
-            size={"lg"}
-            className={CSS.TrashIcon}
-            onMouseOver={() => setHoverTrashIcon(true)}
-            onMouseOut={() => setHoverTrashIcon(false)}
-          />
-          {hoverTrashIcon && <OptionIconsTooltip text="Trash" />}
+          <Tooltip title="Trash" arrow>
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              size={"lg"}
+              className={CSS.TrashIcon}
+            />
+          </Tooltip>
         </div>
-        <div
-          className={CSS.TopicButton}
-          onClick={() => setCreateNewTopicModal(true)}
-        >
-          Create New
-        </div>
+        <Tooltip title="Create New Topic" arrow>
+          <div
+            className={CSS.TopicButton}
+            onClick={() => setCreateNewTopicModal(true)}
+          >
+            Create New
+          </div>
+        </Tooltip>
       </div>
     </div>
   );
