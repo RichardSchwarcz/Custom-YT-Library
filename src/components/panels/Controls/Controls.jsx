@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { CreateTopicModal, AddVideoModal, NewFolderModal } from "../../modals/";
 import { TopicsList } from "../../listings";
@@ -9,6 +10,7 @@ import CSS from "./Controls.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFolderPlus,
+  faHouse,
   faRectangleXmark,
   faTrashCan,
   faVideo,
@@ -19,12 +21,15 @@ function Controls() {
   const [AddNewVideoModal, setAddNewVideoModal] = useState(false);
   const [createNewFolderModal, setCreateNewFolderModal] = useState(false);
 
+  const [hoverHomeIcon, setHoverHomeIcon] = useState(false);
   const [hoverFolderIcon, setHoverFolderIcon] = useState(false);
   const [hoverVideoIcon, setHoverVideoIcon] = useState(false);
   const [hoverRemoveIcon, setHoverRemoveIcon] = useState(false);
   const [hoverTrashIcon, setHoverTrashIcon] = useState(false);
 
   const { data, refetch } = useFetch("/Topics");
+
+  const navigate = useNavigate();
 
   return (
     <div className={CSS.Container}>
@@ -34,6 +39,15 @@ function Controls() {
       <div className={CSS.ContentContainer}>
         <div className={CSS.OptionContainer}>
           <div className={CSS.Options}>
+            <FontAwesomeIcon
+              icon={faHouse}
+              size={"lg"}
+              className={CSS.Icon}
+              onClick={() => navigate("/")}
+              onMouseOver={() => setHoverHomeIcon(true)}
+              onMouseOut={() => setHoverHomeIcon(false)}
+            />
+            {hoverHomeIcon && <OptionIconsTooltip text="Home" />}
             <FontAwesomeIcon
               icon={faFolderPlus}
               size={"lg"}

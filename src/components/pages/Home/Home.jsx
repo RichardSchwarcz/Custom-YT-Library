@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Folders, Vids, Controls } from "../../panels";
 import Split from "react-split";
-import Folders from "../panels/Folders/Folders";
-import Vids from "../panels/Vids/Vids";
-import Topics from "../panels/Controls/Controls";
-import "../../styles/index.css";
+import "../../../styles/index.css";
 
 function Home() {
   const [collapsedIndex, setCollapsedIndex] = useState(null);
 
   return (
     <div className="flexContainer">
-      <Topics />
+      <Controls />
       <Split
         collapsed={collapsedIndex}
         className="VerticalSplitter"

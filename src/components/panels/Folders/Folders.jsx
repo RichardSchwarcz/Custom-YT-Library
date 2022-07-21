@@ -2,11 +2,15 @@ import CSS from "./Folders.module.css";
 import FoldersList from "../../listings/FoldersList/FoldersList";
 import useCurrentFolder from "../../../hooks/useCurrentFolder";
 import useFetch from "../../../hooks/useFetch";
+import { useParams } from "react-router-dom";
 
 function Folders() {
   const { data } = useFetch("/Folders");
-  const currentFolderName = useCurrentFolder();
+  const topicName = useParams();
+  console.log(topicName);
 
+  const currentFolderName = useCurrentFolder();
+  // TODO
   function showFolders(data) {
     const filtered = data.filter(
       (folder) => folder.topic === currentFolderName

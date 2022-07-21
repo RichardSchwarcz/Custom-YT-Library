@@ -6,12 +6,6 @@ function TopicsList(props) {
   const topics = props.topics;
   const navigate = useNavigate();
 
-  function handleOnClick(topicName) {
-    return function inner() {
-      navigate(`/${topicName}`);
-    };
-  }
-
   const groupedTopics = groupByTag(topics);
 
   return (
@@ -26,7 +20,7 @@ function TopicsList(props) {
                   <div
                     key={topic.name}
                     className={CSS.Topic}
-                    onClick={handleOnClick(topic.name)}
+                    onClick={() => navigate(`/${topic.name}`)}
                   >
                     {topic.name}
                   </div>
