@@ -1,5 +1,6 @@
 import { useState } from "react";
 import postToDB from "../../../helpers/postToDB";
+import useFetch from "../../../hooks/useFetch";
 import ReactDom from "react-dom";
 import CSS from "../ModalContainer.module.css";
 import ModalContainer from "../ModalContainer";
@@ -7,6 +8,7 @@ import ModalContainer from "../ModalContainer";
 function CreateTopicModal(props) {
   const [name, setName] = useState("");
   const [tag, setTag] = useState("");
+  const { refetch } = useFetch("/Topics");
   const closeModal = props.closeModal;
 
   const topic = () => {
@@ -20,10 +22,10 @@ function CreateTopicModal(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const onCreate = props.onCreate;
-
+    // const onCreate = props.onCreate;
     await postToDB(topic(), "http://localhost:8000/Topics");
-    await onCreate();
+    // await onCreate();
+    refetch();
   };
 
   return ReactDom.createPortal(

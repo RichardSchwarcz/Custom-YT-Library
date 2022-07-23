@@ -9,7 +9,7 @@ import ModalContainer from "../ModalContainer";
 function AddVideoModal(props) {
   const [link, setLink] = useState("");
   const [folder, setFolder] = useState("");
-  const { data } = useFetch("/Folders");
+  const { data } = useFetch("/Videos");
   const topic = useCurrentFolder();
   const name = "";
 

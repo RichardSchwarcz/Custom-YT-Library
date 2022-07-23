@@ -38,17 +38,12 @@ function Topics() {
       </div>
 
       <div>
-        {addNewVideoModal && (
-          <AddVideoModal onCreate={refetch} closeModal={setAddNewVideoModal} />
-        )}
+        {addNewVideoModal && <AddVideoModal closeModal={setAddNewVideoModal} />}
       </div>
 
       <div>
         {createNewFolderModal && (
-          <NewFolderModal
-            onCreate={refetch}
-            closeModal={setCreateNewFolderModal}
-          />
+          <NewFolderModal closeModal={setCreateNewFolderModal} />
         )}
       </div>
     </>
