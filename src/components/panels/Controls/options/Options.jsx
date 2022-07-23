@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import CSS from "../Controls.module.css";
@@ -11,9 +10,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "@mui/material/Tooltip";
 
-function Options() {
-  const [AddNewVideoModal, setAddNewVideoModal] = useState(false);
-  const [createNewFolderModal, setCreateNewFolderModal] = useState(false);
+function Options(props) {
+  const { createFolderModal, addVideoModal, addDeleteButtons } = props;
 
   const navigate = useNavigate();
   return (
@@ -32,7 +30,7 @@ function Options() {
           icon={faFolderPlus}
           size={"lg"}
           className={CSS.Icon}
-          onClick={() => setCreateNewFolderModal(true)}
+          onClick={() => createFolderModal(true)}
         />
       </Tooltip>
 
@@ -41,7 +39,7 @@ function Options() {
           icon={faVideo}
           size={"lg"}
           className={CSS.Icon}
-          onClick={() => setAddNewVideoModal(true)}
+          onClick={() => addVideoModal(true)}
         />
       </Tooltip>
 
@@ -50,6 +48,7 @@ function Options() {
           icon={faPenToSquare}
           size={"lg"}
           className={CSS.Icon}
+          onClick={() => addDeleteButtons(true)}
         />
       </Tooltip>
     </div>

@@ -1,6 +1,4 @@
-// import CSS from "./FoldersList.module.css";
 import ElementsList from "../ElementsList";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderClosed } from "@fortawesome/free-solid-svg-icons";
 
 function FoldersList(props) {

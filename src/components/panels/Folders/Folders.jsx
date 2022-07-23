@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 function Folders() {
   const { data } = useFetch("/Folders");
   const path = useParams();
-  console.log(path);
+  // console.log(path);
 
   const currentFolderName = useCurrentFolder();
   // TODO

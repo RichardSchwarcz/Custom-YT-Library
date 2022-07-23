@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Folders, Vids, Controls } from "../../panels";
+import { ControlsContextProvider } from "../../../context/ControlsContext";
+
 import Split from "react-split";
 import "../../../styles/index.css";
 
@@ -8,7 +10,9 @@ function Home() {
 
   return (
     <div className="flexContainer">
-      <Controls />
+      <ControlsContextProvider>
+        <Controls />
+      </ControlsContextProvider>
       <Split
         collapsed={collapsedIndex}
         className="VerticalSplitter"
