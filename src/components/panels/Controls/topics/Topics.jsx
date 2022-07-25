@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import ControlsContext from "../../../../context/ControlsContext";
-import useFetch from "../../../../hooks/useFetch";
 import { TopicsList } from "../../../listings";
 import {
   CreateTopicModal,
@@ -11,27 +10,29 @@ import {
 import CSS from "../Controls.module.css";
 
 function Topics() {
-  const { data, refetch } = useFetch("/Topics");
-
   const {
-    createNewTopicModal,
-    setCreateNewTopicModal,
-    addNewVideoModal,
-    setAddNewVideoModal,
-    createNewFolderModal,
-    setCreateNewFolderModal,
+    modals: {
+      createNewTopicModal,
+      setCreateNewTopicModal,
+      addNewVideoModal,
+      setAddNewVideoModal,
+      createNewFolderModal,
+      setCreateNewFolderModal,
+    },
+    model: { data },
   } = useContext(ControlsContext);
 
+  const topics = data.Topics;
   return (
     <>
       <div className={CSS.TopicList}>
-        {data && <TopicsList topics={data} />}
+        {topics && <TopicsList topics={topics} />}
       </div>
 
       <div>
         {createNewTopicModal && (
           <CreateTopicModal
-            onCreate={refetch}
+            // onCreate={refetch}
             closeModal={setCreateNewTopicModal}
           />
         )}

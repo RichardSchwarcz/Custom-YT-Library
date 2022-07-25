@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import ControlsContext from "../../../context/ControlsContext";
+import { TYPES } from "../../../helpers/postToDB";
 import useCurrentFolder from "../../../hooks/useCurrentFolder";
-import postToDB from "../../../helpers/postToDB";
 import ReactDom from "react-dom";
 import CSS from "../ModalContainer.module.css";
 import ModalContainer from "../ModalContainer";
@@ -8,19 +9,16 @@ import ModalContainer from "../ModalContainer";
 function AddFolderModal(props) {
   const [name, setName] = useState("");
 
+  const { model } = useContext(ControlsContext);
+
   const closeModal = props.closeModal;
   const topic = useCurrentFolder();
-  const deleted = "notDeleted";
-  const folder = { name, topic, deleted };
+  const folder = { name, topic };
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const onCreate = props.onCreate;
-
-    await postToDB(folder, "http://localhost:8000/Folders");
-    await onCreate();
-  };
-
+    model.create(folder, TYPES.FOLDERS);
+  }
   return ReactDom.createPortal(
     <ModalContainer
       header="Create New Folder"

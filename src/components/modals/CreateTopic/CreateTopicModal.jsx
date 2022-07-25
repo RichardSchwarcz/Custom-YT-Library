@@ -1,6 +1,8 @@
-import { useState } from "react";
-import postToDB from "../../../helpers/postToDB";
-import useFetch from "../../../hooks/useFetch";
+import { useState, useContext } from "react";
+import ControlsContext from "../../../context/ControlsContext";
+
+import { TYPES } from "../../../helpers/postToDB";
+
 import ReactDom from "react-dom";
 import CSS from "../ModalContainer.module.css";
 import ModalContainer from "../ModalContainer";
@@ -8,25 +10,23 @@ import ModalContainer from "../ModalContainer";
 function CreateTopicModal(props) {
   const [name, setName] = useState("");
   const [tag, setTag] = useState("");
-  const { refetch } = useFetch("/Topics");
+
+  const { model } = useContext(ControlsContext);
+
   const closeModal = props.closeModal;
 
   const topic = () => {
-    const deleted = "notDeleted";
-    let topicObj = { name, tag, deleted };
+    let topicObj = { name, tag };
     if (topicObj.tag === "") {
       topicObj.tag = "Others";
     }
     return topicObj;
   };
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // const onCreate = props.onCreate;
-    await postToDB(topic(), "http://localhost:8000/Topics");
-    // await onCreate();
-    refetch();
-  };
+    model.create(topic(), TYPES.TOPICS);
+  }
 
   return ReactDom.createPortal(
     <ModalContainer
