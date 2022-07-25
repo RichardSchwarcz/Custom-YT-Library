@@ -1,15 +1,21 @@
+import { useContext } from "react";
+import ControlsContext from "../../../context/ControlsContext";
 import CSS from "./Vids.module.css";
 import { VidsList } from "../../listings";
 import useCurrentFolder from "../../../hooks/useCurrentFolder";
-import useFetch from "../../../hooks/useFetch";
 
-function VidsPanel() {
-  const { data } = useFetch("/Videos");
+function Vids() {
+  const {
+    model: { data },
+  } = useContext(ControlsContext);
+
+  const vids = data.Videos;
+
   const currentFolderName = useCurrentFolder();
 
-  function showVids(data) {
-    const filtered = data.filter((vids) => vids.topic === currentFolderName);
-    return data && <VidsList vids={filtered} />;
+  function showVids(vids) {
+    const filtered = vids.filter((video) => video.topic === currentFolderName);
+    return vids && <VidsList vids={filtered} />;
   }
 
   return (
@@ -17,9 +23,9 @@ function VidsPanel() {
       <div className={CSS.Title}>
         <h2>{useCurrentFolder()} Vids</h2>
       </div>
-      <div className={CSS.VidsContainer}>{showVids(data)}</div>
+      <div className={CSS.VidsContainer}>{showVids(vids)}</div>
     </div>
   );
 }
 
-export default VidsPanel;
+export default Vids;

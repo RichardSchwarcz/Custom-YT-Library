@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import ControlsContext from "../../../context/ControlsContext";
+import { TYPES } from "../../../helpers/postToDB";
 import useCurrentFolder from "../../../hooks/useCurrentFolder";
-import useFetch from "../../../hooks/useFetch";
-import postToDB from "../../../helpers/postToDB";
 import ReactDom from "react-dom";
 import CSS from "../ModalContainer.module.css";
 import ModalContainer from "../ModalContainer";
@@ -9,9 +9,10 @@ import ModalContainer from "../ModalContainer";
 function AddVideoModal(props) {
   const [link, setLink] = useState("");
   const [folder, setFolder] = useState("");
-  const { data } = useFetch("/Folders");
   const topic = useCurrentFolder();
   const name = "";
+
+  const { model } = useContext(ControlsContext);
 
   const closeModal = props.closeModal;
   const video = { name, link, topic, folder };
@@ -24,13 +25,10 @@ function AddVideoModal(props) {
     return folderArray;
   }
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const onCreate = props.onCreate;
-
-    await postToDB(video, "http://localhost:8000/Videos");
-    await onCreate();
-  };
+    model.create(video, TYPES.VIDEOS);
+  }
 
   return ReactDom.createPortal(
     <ModalContainer
@@ -50,7 +48,8 @@ function AddVideoModal(props) {
           className={CSS.input}
           onChange={(e) => setFolder(e.target.value)}
         >
-          {currentFolders(data).map((folder) => {
+          {/* TODO chech if ok after thumbnail APIs are done */}
+          {currentFolders(model.data.Folders).map((folder) => {
             return (
               <option value={folder} key={folder}>
                 {folder}

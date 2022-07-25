@@ -12,18 +12,18 @@ function Home() {
     <div className="flexContainer">
       <ControlsContextProvider>
         <Controls />
+        <Split
+          collapsed={collapsedIndex}
+          className="VerticalSplitter"
+          direction="vertical"
+          sizes={[50, 50]}
+          minSize={50}
+          gutterSize={5}
+        >
+          <Folders />
+          <Vids />
+        </Split>
       </ControlsContextProvider>
-      <Split
-        collapsed={collapsedIndex}
-        className="VerticalSplitter"
-        direction="vertical"
-        sizes={[50, 50]}
-        minSize={50}
-        gutterSize={5}
-      >
-        <Folders />
-        <Vids />
-      </Split>
     </div>
   );
 }

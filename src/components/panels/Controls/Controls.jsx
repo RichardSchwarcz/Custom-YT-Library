@@ -11,9 +11,11 @@ import Tooltip from "@mui/material/Tooltip";
 
 function Controls() {
   const {
-    setCreateNewTopicModal,
-    setAddNewVideoModal,
-    setCreateNewFolderModal,
+    modals: {
+      setCreateNewTopicModal,
+      setAddNewVideoModal,
+      setCreateNewFolderModal,
+    },
   } = useContext(ControlsContext);
 
   return (

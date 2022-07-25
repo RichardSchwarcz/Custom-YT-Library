@@ -15,4 +15,7 @@
 - [ ] right click menu
 - [ ] delete folders
 - [ ] rename folders
-- [ ] 
+
+
+**ISSUES**
+-[ ] fix empty submit

@@ -77,12 +77,6 @@
       "tag": "Others",
       "deleted": "notDeleted",
       "id": 13
-    },
-    {
-      "name": "Jelka",
-      "tag": "dipl",
-      "deleted": "notDeleted",
-      "id": 14
     }
   ],
   "Videos": [
@@ -122,25 +116,6 @@
       "parent": "Hooks",
       "deleted": "notDeleted",
       "id": 4
-    },
-    {
-      "name": "ww",
-      "topic": "React",
-      "parent": "Home",
-      "deleted": "notDeleted",
-      "id": 5
-    },
-    {
-      "name": "aa",
-      "topic": "React",
-      "deleted": "notDeleted",
-      "id": 6
-    },
-    {
-      "name": "Jelka",
-      "topic": "React",
-      "deleted": "notDeleted",
-      "id": 7
     }
   ]
 }
